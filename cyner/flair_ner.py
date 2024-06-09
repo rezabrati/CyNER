@@ -26,5 +26,5 @@ class Flair(EntityExtraction):
             # 'labels' are formatted as [(TAG prob), ...]
                 entities.append(Entity(x['start_pos'], x['end_pos'], x['text'], x['labels'][0].value, x['labels'][0].score))
             else:
-                entities.append(Entity("not","not", "not", "not","not")
+                entities.append(Entity("not","not", "not", "not","not"))
         return entities
