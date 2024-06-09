@@ -22,9 +22,6 @@ class Flair(EntityExtraction):
         pred = sentence.to_dict(tag_type='ner')
         entities = []
         for x in pred['entities']:
-            if x.items():
             # 'labels' are formatted as [(TAG prob), ...]
-                entities.append(Entity(x['start_pos'], x['end_pos'], x['text'], x['labels'][0].value, x['labels'][0].score))
-            else:
-                entities.append(Entity("not","not", "not", "not","not"))
+                entities.append(Entity(x['start_pos'], x['end_pos'], x['text'], x['labels'][0], x['labels'][0].score))
         return entities
