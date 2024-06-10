@@ -23,4 +23,4 @@ class Entity:
         # return 'Mention: {}, Class: {}, Start: {}, End: {}, Confidence: {:.2f}'.\
         #     format(self.text, self.entity_type, self.start, self.end, float(confidence_value))
         return 'Mention: {}, Class: {}, Start: {}, End: {}'.\
-            format(self.text, self.entity_type, self.start, self.end))
+            format(self.text, self.entity_type, self.start, self.end)
