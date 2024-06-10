@@ -20,5 +20,7 @@ class Entity:
         confidence_value = self.confidence
         if isinstance(self.confidence, dict):
             confidence_value = self.confidence.get('value', 0.0)
-        return 'Mention: {}, Class: {}, Start: {}, End: {}, Confidence: {:.2f}'.\
-            format(self.text, self.entity_type, self.start, self.end, float(confidence_value))
+        # return 'Mention: {}, Class: {}, Start: {}, End: {}, Confidence: {:.2f}'.\
+        #     format(self.text, self.entity_type, self.start, self.end, float(confidence_value))
+        return 'Mention: {}, Class: {}, Start: {}, End: {}.\
+            format(self.text, self.entity_type, self.start, self.end))
