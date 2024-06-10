@@ -13,6 +13,12 @@ class Entity:
         self.entity_type = entity_type
         self.confidence = confidence
 
-    def __str__(self, ):
+    # def __str__(self, ):
+    #     return 'Mention: {}, Class: {}, Start: {}, End: {}, Confidence: {:.2f}'.\
+    #         format(self.text, self.entity_type, self.start, self.end, self.confidence)
+    def __str__(self):
+        confidence_value = self.confidence
+        if isinstance(self.confidence, dict):
+            confidence_value = self.confidence.get('value', 0.0)
         return 'Mention: {}, Class: {}, Start: {}, End: {}, Confidence: {:.2f}'.\
-            format(self.text, self.entity_type, self.start, self.end, self.confidence)
+            format(self.text, self.entity_type, self.start, self.end, float(confidence_value))
